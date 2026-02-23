@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -16,4 +17,16 @@ export class ProductsComponent {
     { name: 'Fever Grass', price: '1,200', description: 'Freshly dried fever grass (lemongrass), great for making authentic Jamaican bush tea.', image: '/fevergrass.jpeg' },
     { name: 'Soursop Leaf', price: '1,800', description: 'High-quality soursop leaves, traditionally used locally for tea and natural wellness remedies.', image: '/soursopleaf.jpeg' }
   ];
+
+  addedProduct: string | null = null;
+
+  constructor(private cartService: CartService) { }
+
+  addToCart(product: { name: string; price: string; image: string }) {
+    this.cartService.addToCart(product);
+    this.addedProduct = product.name;
+    setTimeout(() => {
+      this.addedProduct = null;
+    }, 1500);
+  }
 }

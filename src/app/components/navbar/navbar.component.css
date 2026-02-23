@@ -52,3 +52,49 @@
     color: var(--ja-black);
     border-color: var(--ja-yellow);
 }
+
+.cart-icon {
+    position: relative;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--header-text);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+    border-bottom: none !important;
+}
+
+.cart-icon:hover {
+    transform: scale(1.15);
+    color: var(--ja-yellow);
+    border-bottom: none !important;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--ja-green);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: badgePop 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes badgePop {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

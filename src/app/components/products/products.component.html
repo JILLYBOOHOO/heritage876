@@ -8,7 +8,10 @@
             <h3>{{ product.name }}</h3>
             <p class="description">{{ product.description }}</p>
             <p class="price">JA${{ product.price }}</p>
-            <button [attr.aria-label]="'Add ' + product.name + ' to cart'">Add to Cart</button>
+            <button (click)="addToCart(product)" [attr.aria-label]="'Add ' + product.name + ' to cart'"
+                [class.added]="addedProduct === product.name">
+                {{ addedProduct === product.name ? '✓ Added!' : 'Add to Cart' }}
+            </button>
         </div>
     </div>
 </section>

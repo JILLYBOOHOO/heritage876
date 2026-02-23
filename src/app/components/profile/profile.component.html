@@ -1,1 +1,15 @@
-<p>profile works!</p>
+
+<section class="profile">
+    <h2>Profile</h2>
+    <div class="profile-grid">
+        <div class="profile-card" *ngFor="let profile of profiles">
+            <div class="img-container">
+                <img [src]="profile.image" alt="{{ profile.name }}">
+            </div>
+            <h3>{{ profile.name }}</h3>
+            <p class="description">{{ profile.description }}</p>
+            <p class="price">JA${{ profile.price }}</p>
+            <button [attr.aria-label]="'Add ' + profile.name + ' to cart'">Add to Cart</button>
+        </div>
+    </div>
+</section>  

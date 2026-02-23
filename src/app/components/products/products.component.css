@@ -86,3 +86,10 @@
 .product-card button {
     width: 100%;
 }
+
+.product-card button.added {
+    background-color: var(--ja-green);
+    color: #fff;
+    border-color: var(--ja-green);
+    pointer-events: none;
+}
