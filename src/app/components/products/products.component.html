@@ -1,0 +1,14 @@
+<section class="products">
+    <h2>Products</h2>
+    <div class="product-grid">
+        <div class="product-card" *ngFor="let product of products">
+            <div class="img-container">
+                <img [src]="product.image" alt="{{ product.name }}">
+            </div>
+            <h3>{{ product.name }}</h3>
+            <p class="description">{{ product.description }}</p>
+            <p class="price">JA${{ product.price }}</p>
+            <button [attr.aria-label]="'Add ' + product.name + ' to cart'">Add to Cart</button>
+        </div>
+    </div>
+</section>
